@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item android:id="@+id/item_action_song"
+            android:icon="@drawable/ic_music_note_black_24dp"
+            android:title="Bài Hát" />
+        <item android:id="@+id/item_action_albums"
+            android:icon="@drawable/ic_album_black_24dp"
+            android:title="Albums" />
+        <item android:id="@+id/item_action_artist"
+            android:icon="@drawable/ic_artist_black_24dp"
+            android:title="Nghệ Sĩ" />
+    </group>
+
+    <group>
+        <item android:id="@+id/item_other"
+            android:icon="@drawable/ic_other_black_24dp"
+            android:title="Mini Game"/>
+
+    </group>
+
+</menu>

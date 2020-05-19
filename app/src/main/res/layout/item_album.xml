@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.mymusic.model.Album" />
+        <variable
+            name="listener"
+            type="com.example.mymusic.adapter.AlbumAdapter.OnItemClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="@dimen/dp_135"
+        android:layout_height="180dp"
+        android:layout_margin="@dimen/dp_4">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:weightSum="7"
+            android:layout_width="match_parent"
+            android:onClick="@{() -> listener.onItemClick(viewModel)}"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_album_black_24dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"/>
+
+            <LinearLayout
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="fill_horizontal"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@{viewModel.albumName}"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimary"
+                    android:ellipsize="start"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="@{viewModel.numberOfTrack}"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/colorPrimary"
+                android:text="@{viewModel.albumArtist}"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>
